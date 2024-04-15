@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://oro0qjyvrqbr"]
+
+[ext_resource type="Texture2D" uid="uid://caqhnebx30b6d" path="res://assets/floor.jpg" id="1_gjia2"]
+[ext_resource type="Texture2D" uid="uid://c3cnod8tn47ny" path="res://assets/Cat-Sheet.png" id="2_1pxy4"]
+[ext_resource type="Script" path="res://scenes/CharacterBody2D.gd" id="2_x0xcy"]
+[ext_resource type="Texture2D" uid="uid://bnnfqs4glcqpo" path="res://assets/grass.png" id="4_0c4c1"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gpuqo"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Grass2" type="Sprite2D" parent="."]
+position = Vector2(673, 378)
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("4_0c4c1")
+
+[node name="Grass" type="Sprite2D" parent="."]
+position = Vector2(1003, 378)
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("4_0c4c1")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(265, 378)
+scale = Vector2(0.941406, 1.12847)
+texture = ExtResource("1_gjia2")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+position = Vector2(133, 378)
+slide_on_ceiling = false
+script = ExtResource("2_x0xcy")
+metadata/_edit_group_ = true
+
+[node name="Cat-sheet" type="Sprite2D" parent="CharacterBody2D"]
+position = Vector2(-13, -35)
+scale = Vector2(4, 4)
+texture = ExtResource("2_1pxy4")
+hframes = 8
+vframes = 50
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("CapsuleShape2D_gpuqo")
+metadata/_edit_group_ = true
