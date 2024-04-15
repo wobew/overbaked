@@ -8,6 +8,10 @@ const JUMP_VELOCITY = -400.0
 # var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var gravity = 0
 
+@onready var animation_tree = $"../AnimationTree"
+
+@onready var playback = animation_tree.get("parameters/playback")
+
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -32,3 +36,8 @@ func _physics_process(delta):
 		
 
 	move_and_slide()
+	
+	if abs(velocity.x) > 1:
+		playback.travel("caminar2")
+	else:
+		playback.travel("quieto")
