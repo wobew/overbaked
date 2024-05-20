@@ -1,65 +1,11 @@
-[gd_scene load_steps=17 format=3 uid="uid://oro0qjyvrqbr"]
+[gd_scene load_steps=19 format=3 uid="uid://oro0qjyvrqbr"]
 
 [ext_resource type="Texture2D" uid="uid://c4dfnjljfqy1p" path="res://assets/pared.png" id="1_348p2"]
 [ext_resource type="Texture2D" uid="uid://caqhnebx30b6d" path="res://assets/floor.jpg" id="1_gjia2"]
-[ext_resource type="Texture2D" uid="uid://c3cnod8tn47ny" path="res://assets/Cat-Sheet.png" id="2_1pxy4"]
+[ext_resource type="Texture2D" path="res://assets/Cat-Sheet.png" id="2_1pxy4"]
 [ext_resource type="Script" path="res://scenes/CharacterBody2D.gd" id="2_x0xcy"]
 [ext_resource type="Texture2D" uid="uid://bnnfqs4glcqpo" path="res://assets/grass.png" id="4_0c4c1"]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gpuqo"]
-
-[sub_resource type="Animation" id="Animation_63c5j"]
-resource_name = "quieto"
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Cat-sheet:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 15]
-}
-
-[sub_resource type="Animation" id="Animation_2jycd"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Cat-sheet:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-
-[sub_resource type="Animation" id="Animation_17gs0"]
-resource_name = "caminar2"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Cat-sheet:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 51]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_13ads"]
-_data = {
-"RESET": SubResource("Animation_2jycd"),
-"caminar2": SubResource("Animation_17gs0"),
-"quieto": SubResource("Animation_63c5j")
-}
+[ext_resource type="Texture2D" uid="uid://c0f4ygxtpp0cj" path="res://assets/paco.png" id="6_rugwk"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_vh14a"]
 animation = &"caminar2"
@@ -78,8 +24,66 @@ advance_mode = 2
 states/caminar2/node = SubResource("AnimationNodeAnimation_vh14a")
 states/caminar2/position = Vector2(582, 100)
 states/quieto/node = SubResource("AnimationNodeAnimation_hxfxm")
-states/quieto/position = Vector2(390, 100)
+states/quieto/position = Vector2(389, 100)
 transitions = ["quieto", "caminar2", SubResource("AnimationNodeStateMachineTransition_0r5ck"), "caminar2", "quieto", SubResource("AnimationNodeStateMachineTransition_px253"), "Start", "quieto", SubResource("AnimationNodeStateMachineTransition_e30hv")]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gpuqo"]
+
+[sub_resource type="Animation" id="Animation_2jycd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cat-sheet:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_17gs0"]
+resource_name = "caminar2"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cat-sheet:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 51]
+}
+
+[sub_resource type="Animation" id="Animation_63c5j"]
+resource_name = "quieto"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cat-sheet:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 15]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_13ads"]
+_data = {
+"RESET": SubResource("Animation_2jycd"),
+"caminar2": SubResource("Animation_17gs0"),
+"quieto": SubResource("Animation_63c5j")
+}
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tsg0u"]
 
 [node name="Main" type="Node2D"]
 
@@ -103,17 +107,15 @@ position = Vector2(265, 378)
 scale = Vector2(0.941406, 1.12847)
 texture = ExtResource("1_gjia2")
 
+[node name="AnimationTree" type="AnimationTree" parent="."]
+root_node = NodePath("../CharacterBody2D")
+tree_root = SubResource("AnimationNodeStateMachine_chrmi")
+anim_player = NodePath("../CharacterBody2D/AnimationPlayer")
+
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 position = Vector2(133, 378)
 slide_on_ceiling = false
 script = ExtResource("2_x0xcy")
-
-[node name="Cat-sheet" type="Sprite2D" parent="CharacterBody2D"]
-position = Vector2(-13, -35)
-scale = Vector2(4, 4)
-texture = ExtResource("2_1pxy4")
-hframes = 8
-vframes = 50
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 shape = SubResource("CapsuleShape2D_gpuqo")
@@ -123,10 +125,48 @@ libraries = {
 "": SubResource("AnimationLibrary_13ads")
 }
 
-[node name="AnimationTree" type="AnimationTree" parent="."]
-root_node = NodePath("../CharacterBody2D")
-libraries = {
-"": SubResource("AnimationLibrary_13ads")
-}
-tree_root = SubResource("AnimationNodeStateMachine_chrmi")
-anim_player = NodePath("../CharacterBody2D/AnimationPlayer")
+[node name="Cat-sheet" type="Sprite2D" parent="CharacterBody2D"]
+position = Vector2(-13, -35)
+scale = Vector2(4, 4)
+texture = ExtResource("2_1pxy4")
+hframes = 8
+vframes = 50
+
+[node name="Paco1" type="CharacterBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Paco1"]
+position = Vector2(1046, 292)
+shape = SubResource("CapsuleShape2D_tsg0u")
+
+[node name="Sprite2D" type="Sprite2D" parent="Paco1"]
+position = Vector2(1056, 264)
+scale = Vector2(-4, 4)
+texture = ExtResource("6_rugwk")
+hframes = 8
+vframes = 14
+
+[node name="Paco2" type="CharacterBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Paco2"]
+position = Vector2(1046, 292)
+shape = SubResource("CapsuleShape2D_tsg0u")
+
+[node name="Sprite2D" type="Sprite2D" parent="Paco2"]
+position = Vector2(1062, 337)
+scale = Vector2(-4, 4)
+texture = ExtResource("6_rugwk")
+hframes = 8
+vframes = 14
+
+[node name="Paco3" type="CharacterBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Paco3"]
+position = Vector2(1046, 292)
+shape = SubResource("CapsuleShape2D_tsg0u")
+
+[node name="Sprite2D" type="Sprite2D" parent="Paco3"]
+position = Vector2(1065, 409)
+scale = Vector2(-4, 4)
+texture = ExtResource("6_rugwk")
+hframes = 8
+vframes = 14

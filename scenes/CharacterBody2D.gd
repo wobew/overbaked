@@ -11,6 +11,8 @@ var gravity = 0
 @onready var animation_tree = $"../AnimationTree"
 
 @onready var playback = animation_tree.get("parameters/playback")
+@onready var cat = $"Cat-sheet"
+
 
 
 func _physics_process(delta):
@@ -18,26 +20,22 @@ func _physics_process(delta):
 	if not is_on_floor():
 		velocity.y += gravity * delta
 
-	if Input.is_key_pressed(KEY_UP):
-		velocity.y = - SPEED
-	elif Input.is_key_pressed(KEY_DOWN):
-		velocity.y = SPEED
-	else:
-		velocity.y = move_toward(velocity.x, 0, SPEED)
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction = Input.get_axis("ui_left", "ui_right")
-	if direction:
-		velocity.x = direction * SPEED
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-		
-		
-
+	
+	var move_input = Input.get_axis("ui_left", "ui_right")
+	velocity.x = move_toward(velocity.x, move_input * SPEED, SPEED)
+	
+	var move_input_y = Input.get_axis("ui_up", "ui_down")
+	velocity.y = move_toward(velocity.y, move_input_y * SPEED, SPEED)
+	
 	move_and_slide()
 	
-	if abs(velocity.x) > 1:
+	if abs(velocity.x) > 1 or move_input:
 		playback.travel("caminar2")
 	else:
 		playback.travel("quieto")
+		
+	if move_input:
+		cat.scale.x = 4 * move_input
