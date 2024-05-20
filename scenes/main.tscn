@@ -1,11 +1,14 @@
-[gd_scene load_steps=19 format=3 uid="uid://oro0qjyvrqbr"]
+[gd_scene load_steps=22 format=3 uid="uid://oro0qjyvrqbr"]
 
 [ext_resource type="Texture2D" uid="uid://c4dfnjljfqy1p" path="res://assets/pared.png" id="1_348p2"]
 [ext_resource type="Texture2D" uid="uid://caqhnebx30b6d" path="res://assets/floor.jpg" id="1_gjia2"]
-[ext_resource type="Texture2D" path="res://assets/Cat-Sheet.png" id="2_1pxy4"]
+[ext_resource type="Texture2D" uid="uid://c3cnod8tn47ny" path="res://assets/Cat-Sheet.png" id="2_1pxy4"]
 [ext_resource type="Script" path="res://scenes/CharacterBody2D.gd" id="2_x0xcy"]
 [ext_resource type="Texture2D" uid="uid://bnnfqs4glcqpo" path="res://assets/grass.png" id="4_0c4c1"]
+[ext_resource type="Script" path="res://scenes/Paco1.gd" id="6_ga0af"]
 [ext_resource type="Texture2D" uid="uid://c0f4ygxtpp0cj" path="res://assets/paco.png" id="6_rugwk"]
+[ext_resource type="Script" path="res://scenes/Soldado.gd" id="8_116w7"]
+[ext_resource type="Texture2D" uid="uid://c1sw2de5vwduv" path="res://assets/Soldado.png" id="9_kyp00"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_vh14a"]
 animation = &"caminar2"
@@ -133,6 +136,7 @@ hframes = 8
 vframes = 50
 
 [node name="Paco1" type="CharacterBody2D" parent="."]
+script = ExtResource("6_ga0af")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Paco1"]
 position = Vector2(1046, 292)
@@ -170,3 +174,17 @@ scale = Vector2(-4, 4)
 texture = ExtResource("6_rugwk")
 hframes = 8
 vframes = 14
+
+[node name="Soldado" type="CharacterBody2D" parent="."]
+script = ExtResource("8_116w7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Soldado"]
+position = Vector2(1046, 292)
+shape = SubResource("CapsuleShape2D_tsg0u")
+
+[node name="Sprite2D" type="Sprite2D" parent="Soldado"]
+position = Vector2(571, 352)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("9_kyp00")
+hframes = 7
+vframes = 3

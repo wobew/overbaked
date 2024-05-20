@@ -1,2 +1,7 @@
 res://scenes/main.tscn
+res://scenes/Paco1.gd
+res://scenes/Paco2.gd
+res://scenes/Paco3.gd
+res://scenes/Paco22.gd
 res://scenes/CharacterBody2D.gd
+res://scenes/Soldado.gd
