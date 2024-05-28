@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://orwjg3tgr5sb"]
+
+[ext_resource type="Script" path="res://scenes/Paco1.gd" id="1_4pl6w"]
+[ext_resource type="Texture2D" uid="uid://c0f4ygxtpp0cj" path="res://assets/paco.png" id="2_mxpfr"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tsg0u"]
+
+[node name="Paco1" type="CharacterBody2D"]
+script = ExtResource("1_4pl6w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_tsg0u")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(15.9752, -43.4593)
+scale = Vector2(-4, 4)
+texture = ExtResource("2_mxpfr")
+offset = Vector2(1.4938, 3.86483)
+hframes = 8
+vframes = 14

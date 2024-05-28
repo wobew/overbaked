@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://cqe1m8dte1q5x"]
+
+[ext_resource type="Script" path="res://scenes/Soldado.gd" id="1_5n0q3"]
+[ext_resource type="Texture2D" uid="uid://c1sw2de5vwduv" path="res://assets/Soldado.png" id="2_o4a5d"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tsg0u"]
+
+[node name="Soldado" type="CharacterBody2D"]
+script = ExtResource("1_5n0q3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(571, 369)
+shape = SubResource("CapsuleShape2D_tsg0u")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(571, 352)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_o4a5d")
+hframes = 7
+vframes = 3
