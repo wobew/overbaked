@@ -1,5 +1,5 @@
+res://resources/theme.tres
+res://gameover.tscn
 res://scenes/main.tscn
-res://paco_1.tscn
-res://scenes/Paco1.gd
-res://soldado.tscn
-res://scenes/Soldado.gd
+res://gameover.gd
+res://scenes/CharacterBody2D.gd

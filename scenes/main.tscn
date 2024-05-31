@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://oro0qjyvrqbr"]
+[gd_scene load_steps=21 format=3 uid="uid://oro0qjyvrqbr"]
 
 [ext_resource type="Texture2D" uid="uid://c4dfnjljfqy1p" path="res://assets/pared.png" id="1_348p2"]
 [ext_resource type="Texture2D" uid="uid://caqhnebx30b6d" path="res://assets/floor.jpg" id="1_gjia2"]
@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://bnnfqs4glcqpo" path="res://assets/grass.png" id="4_0c4c1"]
 [ext_resource type="PackedScene" uid="uid://cqe1m8dte1q5x" path="res://soldado.tscn" id="6_t5lcg"]
 [ext_resource type="PackedScene" uid="uid://orwjg3tgr5sb" path="res://paco_1.tscn" id="6_vfm14"]
+[ext_resource type="PackedScene" uid="uid://btcu8yfuy07jj" path="res://gameover.tscn" id="8_mkjaf"]
+[ext_resource type="Script" path="res://gameover.gd" id="9_ldr34"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_vh14a"]
 animation = &"caminar2"
@@ -141,3 +143,13 @@ position = Vector2(1085, 449)
 
 [node name="Paco3" parent="." instance=ExtResource("6_vfm14")]
 position = Vector2(1073, 269)
+
+[node name="Soldado2" parent="." instance=ExtResource("6_t5lcg")]
+position = Vector2(-4, 89)
+
+[node name="MarginContainer" parent="." instance=ExtResource("8_mkjaf")]
+offset_left = 316.0
+offset_top = 101.0
+offset_right = 934.0
+offset_bottom = 575.0
+script = ExtResource("9_ldr34")

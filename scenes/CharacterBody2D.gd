@@ -13,16 +13,26 @@ var money = 0
 
 @onready var playback = animation_tree.get("parameters/playback")
 @onready var cat = $"Cat-sheet"
-@onready var soldado1 = $"../Soldado"
+@onready var soldadoX = $"../Soldado"
+@onready var soldadoC = $"../Soldado2"
+@onready var gameOver = $"../MarginContainer"
 
 func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
-	
+		
 	if Input.is_action_just_pressed("TECLA_Z") and money >= 10:
+		gameOver.visible = true
+	
+	if Input.is_action_just_pressed("TECLA_X") and money >= 10:
 		money -= 10
-		soldado1.activo = true
+		soldadoX.activo = true
+		print("pago dinero: -10")
+		
+	if Input.is_action_just_pressed("TECLA_C") and money >= 10:
+		money -= 10
+		soldadoC.activo = true
 		print("pago dinero: -10")
 
 		

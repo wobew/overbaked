@@ -1,3 +1,10 @@
+Label
+PanelContainer
+MarginContainer
+Button
+VBoxContainer
+TextEdit
+CanvasLayer
 CharacterBody2D
 AnimationPlayer
 Sprite2D
