@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://oro0qjyvrqbr"]
+[gd_scene load_steps=24 format=3 uid="uid://oro0qjyvrqbr"]
 
 [ext_resource type="Texture2D" uid="uid://c4dfnjljfqy1p" path="res://assets/pared.png" id="1_348p2"]
 [ext_resource type="Texture2D" uid="uid://caqhnebx30b6d" path="res://assets/floor.jpg" id="1_gjia2"]
@@ -9,6 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://orwjg3tgr5sb" path="res://paco_1.tscn" id="6_vfm14"]
 [ext_resource type="PackedScene" uid="uid://btcu8yfuy07jj" path="res://gameover.tscn" id="8_mkjaf"]
 [ext_resource type="Script" path="res://gameover.gd" id="9_ldr34"]
+[ext_resource type="Texture2D" uid="uid://cqbr42wi2g88e" path="res://assets/spr_cocina.png" id="10_bfw10"]
+[ext_resource type="Texture2D" uid="uid://vys3ncbmt0ie" path="res://assets/spr_empaquetadora.png" id="11_um0bk"]
+[ext_resource type="Texture2D" uid="uid://dr8pvi7l6jcih" path="res://assets/spr_moledora.png" id="12_h5i8r"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_vh14a"]
 animation = &"caminar2"
@@ -31,6 +34,8 @@ states/quieto/position = Vector2(389, 100)
 transitions = ["quieto", "caminar2", SubResource("AnimationNodeStateMachineTransition_0r5ck"), "caminar2", "quieto", SubResource("AnimationNodeStateMachineTransition_px253"), "Start", "quieto", SubResource("AnimationNodeStateMachineTransition_e30hv")]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gpuqo"]
+radius = 23.055
+height = 66.39
 
 [sub_resource type="Animation" id="Animation_2jycd"]
 length = 0.001
@@ -113,6 +118,47 @@ root_node = NodePath("../CharacterBody2D")
 tree_root = SubResource("AnimationNodeStateMachine_chrmi")
 anim_player = NodePath("../CharacterBody2D/AnimationPlayer")
 
+[node name="Soldado" parent="." instance=ExtResource("6_t5lcg")]
+
+[node name="Paco1" parent="." instance=ExtResource("6_vfm14")]
+position = Vector2(1085, 355)
+
+[node name="Paco2" parent="." instance=ExtResource("6_vfm14")]
+position = Vector2(1085, 449)
+
+[node name="Paco3" parent="." instance=ExtResource("6_vfm14")]
+position = Vector2(1073, 269)
+
+[node name="Soldado2" parent="." instance=ExtResource("6_t5lcg")]
+position = Vector2(-4, 89)
+
+[node name="MarginContainer" parent="." instance=ExtResource("8_mkjaf")]
+visible = false
+offset_left = 316.0
+offset_top = 101.0
+offset_right = 934.0
+offset_bottom = 575.0
+script = ExtResource("9_ldr34")
+
+[node name="SprCocina" type="Sprite2D" parent="."]
+position = Vector2(217, 265)
+scale = Vector2(2, 2)
+texture = ExtResource("10_bfw10")
+hframes = 2
+vframes = 2
+
+[node name="SprEmpaquetadora" type="Sprite2D" parent="."]
+position = Vector2(123, 526)
+scale = Vector2(5, 5)
+texture = ExtResource("11_um0bk")
+
+[node name="SprMoledora" type="Sprite2D" parent="."]
+position = Vector2(66, 263)
+scale = Vector2(4, 4)
+texture = ExtResource("12_h5i8r")
+hframes = 2
+vframes = 2
+
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 position = Vector2(133, 378)
 slide_on_ceiling = false
@@ -132,24 +178,3 @@ scale = Vector2(4, 4)
 texture = ExtResource("2_1pxy4")
 hframes = 8
 vframes = 50
-
-[node name="Soldado" parent="." instance=ExtResource("6_t5lcg")]
-
-[node name="Paco1" parent="." instance=ExtResource("6_vfm14")]
-position = Vector2(1085, 355)
-
-[node name="Paco2" parent="." instance=ExtResource("6_vfm14")]
-position = Vector2(1085, 449)
-
-[node name="Paco3" parent="." instance=ExtResource("6_vfm14")]
-position = Vector2(1073, 269)
-
-[node name="Soldado2" parent="." instance=ExtResource("6_t5lcg")]
-position = Vector2(-4, 89)
-
-[node name="MarginContainer" parent="." instance=ExtResource("8_mkjaf")]
-offset_left = 316.0
-offset_top = 101.0
-offset_right = 934.0
-offset_bottom = 575.0
-script = ExtResource("9_ldr34")

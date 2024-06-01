@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 
-const SPEED = 300.0
+const SPEED = 200
 const JUMP_VELOCITY = -400.0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -17,13 +17,12 @@ var money = 0
 @onready var soldadoC = $"../Soldado2"
 @onready var gameOver = $"../MarginContainer"
 
+
 func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
 		
-	if Input.is_action_just_pressed("TECLA_Z") and money >= 10:
-		gameOver.visible = true
 	
 	if Input.is_action_just_pressed("TECLA_X") and money >= 10:
 		money -= 10
@@ -59,3 +58,8 @@ func _physics_process(delta):
 		
 	if move_input:
 		cat.scale.x = 4 * move_input
+	
+	var collision_info = move_and_collide(velocity * delta)
+	if collision_info:
+		gameOver.visible = true
+	

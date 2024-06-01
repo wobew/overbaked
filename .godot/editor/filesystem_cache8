@@ -1,25 +1,29 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1717135047
+::res://::1717199174
 export_presets.cfg::TextFile::-1::1713148725::0::1::::<><>::
+gameover.gd::GDScript::-1::1717137615::0::1::::<>MarginContainer<>::
+gameover.tscn::PackedScene::3725412008604252739::1717137518::0::1::::<><>::
 icon.svg::CompressedTexture2D::8475396827807831143::1713132830::1713132859::1::::<><>::
-paco_1.tscn::PackedScene::1019090438004094885::1717131801::0::1::::<><>::res://scenes/Paco1.gd<>uid://c0f4ygxtpp0cj::::res://assets/paco.png
 margin_container.tscn::PackedScene::4022877864252939436::1717135857::0::1::::<><>::uid://bauve8wmxuok7::::res://fonts/MinimalPixel v2.ttf
-gameover.tscn::PackedScene::3725412008604252739::1717135920::0::1::::<><>::uid://bauve8wmxuok7::::res://fonts/MinimalPixel v2.ttf
+paco_1.tscn::PackedScene::1019090438004094885::1717131801::0::1::::<><>::res://scenes/Paco1.gd<>uid://c0f4ygxtpp0cj::::res://assets/paco.png
 soldado.tscn::PackedScene::5905722186724374019::1717131801::0::1::::<><>::res://scenes/Soldado.gd<>uid://c1sw2de5vwduv::::res://assets/Soldado.png
-::res://assets/::1716175614
+::res://assets/::1717200835
 Cat-Sheet.png::CompressedTexture2D::6743072276210279850::1677958694::1713137949::1::::<><>::
 floor.jpg::CompressedTexture2D::4806319858442909389::1713137486::1713137746::1::::<><>::
 grass.png::CompressedTexture2D::3326045709963650316::1713141741::1713141747::1::::<><>::
 paco.png::CompressedTexture2D::6539688350505794617::1714359100::1714359103::1::::<><>::
 pared.png::CompressedTexture2D::6814838256555174419::1713147936::1713147940::1::::<><>::
 Soldado.png::CompressedTexture2D::6636294256965677193::1716175609::1716175614::1::::<><>::
+spr_cocina.png::CompressedTexture2D::5899012672765042506::1717200708::1717200709::1::::<><>::
+spr_empaquetadora.png::CompressedTexture2D::1524654376550656240::1717200835::1717200837::1::::<><>::
+spr_moledora.png::CompressedTexture2D::8421545585535440951::1717200826::1717200837::1::::<><>::
 ::res://fonts/::1717134545
 MinimalPixel v2.ttf::FontFile::2428992206631027260::1717134468::1717134545::1::::<><>::
-::res://resources/::1717134746
+::res://resources/::1717135857
 theme.tres::Theme::7118364438510041138::1717135857::0::1::::<><>::uid://bauve8wmxuok7::::res://fonts/MinimalPixel v2.ttf
-::res://scenes/::1717132964
-CharacterBody2D.gd::GDScript::-1::1717131686::0::1::::<>CharacterBody2D<>::
-main.tscn::PackedScene::1018633770893864459::1717132964::0::1::::<><>::uid://c4dfnjljfqy1p::::res://assets/pared.png<>uid://caqhnebx30b6d::::res://assets/floor.jpg<>uid://c3cnod8tn47ny::::res://assets/Cat-Sheet.png<>res://scenes/CharacterBody2D.gd<>uid://bnnfqs4glcqpo::::res://assets/grass.png<>uid://cqe1m8dte1q5x::::res://soldado.tscn<>uid://orwjg3tgr5sb::::res://paco_1.tscn
+::res://scenes/::1717200579
+CharacterBody2D.gd::GDScript::-1::1717200353::0::1::::<>CharacterBody2D<>::
+main.tscn::PackedScene::1018633770893864459::1717200579::0::1::::<><>::uid://c4dfnjljfqy1p::::res://assets/pared.png<>uid://caqhnebx30b6d::::res://assets/floor.jpg<>uid://c3cnod8tn47ny::::res://assets/Cat-Sheet.png<>res://scenes/CharacterBody2D.gd<>uid://bnnfqs4glcqpo::::res://assets/grass.png<>uid://cqe1m8dte1q5x::::res://soldado.tscn<>uid://orwjg3tgr5sb::::res://paco_1.tscn<>uid://btcu8yfuy07jj::::res://gameover.tscn<>res://gameover.gd
 Paco1.gd::GDScript::-1::1716856984::0::1::::<>CharacterBody2D<>::
 Paco2.gd::GDScript::-1::1716171897::0::1::::<>CharacterBody2D<>::
 Paco3.gd::GDScript::-1::1716171949::0::1::::<>CharacterBody2D<>::
